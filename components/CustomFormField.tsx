@@ -12,6 +12,7 @@ import { FormFieldType } from "./forms/PatientForm";
 import Image from "next/image";
 import 'react-phone-number-input/style.css'
 import PhoneInputWithCountrySelect from "react-phone-number-input";
+import { Control } from "react-hook-form";
 
 interface CustomProps {
   control: Control<any>;
@@ -61,7 +62,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             placeholder={placeholder}
             international
             withCountryCallingCode
-            value={field.value as E164Number | undefined}
+            value={field.value as any | undefined}
             onChange={field.onChange}
             className="input-phone"
           />
